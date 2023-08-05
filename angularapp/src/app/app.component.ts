@@ -1,8 +1,4 @@
 import { Component ,EventEmitter,Output } from '@angular/core';
-
-
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,12 +6,11 @@ import { Component ,EventEmitter,Output } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularapp';
-  ImagePath: string;
+  //ImagePath: string;
   name='';
   foodName:newFood[] =[];
   image ='';
   calories=0;
-  
   count:number;
   
   
@@ -27,7 +22,7 @@ export class AppComponent {
   
   Oclick()
   {
-    console.log(this.count);
+    //console.log(this.count);
 
   }
   enteredSearchvalue:string = '';
