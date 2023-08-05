@@ -1,0 +1,10 @@
+<h2>Food List</h2>
+
+<input type="text" [(ngModel)]="searchText" placeholder="Search foods by name" />
+
+<div class="food-item" *ngFor="let food of foods | foodFilter: searchText">
+  <img [src]="food.imageSrc" alt="Food Image">
+  <p>Name: {{ food.name }}</p>
+  <p>Calories: {{ food.calories }}</p>
+  <button (click)="addToTodaysFoods(food)">Add to Today's List</button>
+</div>
