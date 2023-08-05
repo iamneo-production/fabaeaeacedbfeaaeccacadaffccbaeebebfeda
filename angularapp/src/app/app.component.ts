@@ -11,7 +11,7 @@ export class AppComponent {
   foodName:newFood[] =[];
   image ='';
   calories=0;
-  count:number;
+  //count:number;
   
   
 
