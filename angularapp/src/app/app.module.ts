@@ -2,14 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppFoodListComponent } from './app-food-list.component';
+import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';  
 
 
 @NgModule({
   declarations: [
-    AppFoodListComponent,
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -18,6 +18,6 @@ import { CommonModule } from '@angular/common';
     CommonModule
    ],
   providers: [],
-  bootstrap: [AppFoodListComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
