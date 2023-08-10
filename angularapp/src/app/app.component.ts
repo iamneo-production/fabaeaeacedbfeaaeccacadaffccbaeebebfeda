@@ -27,7 +27,7 @@ export class AppComponent {
   
   Oclick()
   {
-    console.log(this.count);
+    //console.log(this.count);
 
   }
   enteredSearchvalue:string = '';
