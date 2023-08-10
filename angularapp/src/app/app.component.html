@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-  <div class="title">
-    <h1><b>CURRENCY CONVERTER</b></h1>
-  </div>
-  <div class="form-group">
-    
+    <div class="head-navbar" id="headerContainer">CALORY TRACKER</div><br><br>
+    <div class="search" id="searchBox">
+        Search<br>
+        <input type="text" id="searchText" [(ngModel)]="enteredSearchvalue" (input)="onSearchTextChanged()" (keyup)="Onkey(enteredSearchvalue)"/><br><br>
+        <div id="displayContainer" >
+            <div class="card"  *ngFor = "let card of foodName" >
+                <div *ngIf="searchText === '' || card.name.toLowerCase().includes(searchText)">
+                    <img class="card-img-top" src="{{card.image}}" alt="Card image cap" >
+                    <div class="card-body" >
+                        <label class="card-title">{{card.name}}</label>
+                        <p class="card-text">{{card.calories}}</p>
+                        <input type="number" id="count"><button>ADD</button>
+                    </div>
+                </div> 
+            </div> 
+        </div>
+    </div>
     <form #simpleForm="ngForm" (ngSubmit)="getValues(simpleForm.value)">
-      <div class="inner-div" >
-        <label for="source" name="source" id="source">Enter Source CCY : </label>&nbsp;&nbsp;
-        <select name="fromCurrency" id="fromCurrency" ngModel>
-          <option value="USD">{{usd.id}}</option>
-          <option value="GBP">{{gbp.id}}</option>
-          <option value="INR">{{inr.id}}</option>
-        </select>
-        <br><br>
-        <label for="target" name="target" id="target"  >Enter Target CCY : </label>&nbsp;&nbsp;
-        <select name="toCurrency" id="toCurrency" ngModel>
-          <option value="USD">{{usd.id}}</option>
-          <option value="GBP">{{gbp.id}}</option>
-          <option value="INR">{{inr.id}}</option>
-        </select>
-        <br><br>
-        Amount : <input type="number" name="amount" id="amount" ngModel placeholder="Enter the amount"><br><br>
-        <button id="submitButton" class="button">SUBMIT</button><br><br>
-        <label for="resValue" name="resValue" id="resValue">{{fromCurrency | currencypipe: toCurrency : amount |number: '0.2'}}</label>
-      </div>
-     
-    </form>
-  </div>
+         
+        <div  > 
+            <div class="info">
+                <button id="newFood" name="newFood">ADD NEW FOOD</button><br><br>
+                Name : <input type="text" required ngModel name="name"  name="name" id="name" placeholder="Enter food name.." ngModel><br><br>
+                Calories : <input type="text" required ngModel name="calories" name="calories" id="calories" placeholder="Enter the calories amount.." ngModel><br><br>
+                Image : <input type="text" required ngModel name="image" name="image" id="image" placeholder="Enter image url.." ngModel><br><br>
+            </div>
+        </div>
+        <div class="flex">
+        <div *ngFor = "let card of foodName">
+            <br>&nbsp;&nbsp;&nbsp;{{card.name}}<br>
+        </div>
+        </div>
 
+         
+    </form>
+    
+    
 </body>
 </html>
