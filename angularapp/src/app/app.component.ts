@@ -10,13 +10,13 @@ import { Component ,EventEmitter,Output } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularapp';
-  ImagePath: string;
+  //ImagePath: string;
   name='';
   foodName:newFood[] =[];
   image ='';
   calories=0;
   
-  count: number;
+  //count: number;
   
   
 
@@ -27,7 +27,7 @@ export class AppComponent {
   
   Oclick()
   {
-    console.log(this.count);
+    //console.log(this.count);
 
   }
   enteredSearchvalue:string = '';
